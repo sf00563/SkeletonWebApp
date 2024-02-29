@@ -45,5 +45,8 @@ public class QueryProcessorTest {
     assertThat(queryProcessor.process("What is 33 minus 63?"), containsString("-30"));
   }
 
-
+  @Test
+  public void knowsSquareCube() throws Exception {
+    assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 456, 2386, 1461, 3721, 1, 4006, 729?"), containsString("729"));
+  }
 }

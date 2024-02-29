@@ -43,6 +43,23 @@ public class QueryProcessor {
       return "" + (Integer.parseInt(args[2]) - Integer.parseInt(args[4].substring(0,args[4].length()-1)));
     }
 
+    if (query.toLowerCase().contains("cube")){
+      String[] args = query.split(": ");
+      String[] number = args[1].replace("?", "").split(", ");
+      String answer = "";
+      for(String stringNumber : number){
+        int n = (int) Math.round(Math.pow(Integer.parseInt(stringNumber), 1.0/3.0));
+        if(Integer.parseInt(stringNumber) == n * n * n){
+          int square = (int) Math.round(Math.pow(Integer.parseInt(stringNumber), 1.0/2.0));
+          if(Integer.parseInt(stringNumber) == square * square){
+            answer = stringNumber;
+          }
+        }
+      }
+      return answer;
+    }
+
+
     return "";
   }
 }
