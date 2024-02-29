@@ -21,6 +21,18 @@ public class QueryProcessor {
       return "" + (Integer.parseInt(args[2]) + Integer.parseInt(args[4].substring(0,args[4].length()-1)));
     }
 
+    if (query.toLowerCase().contains("largest:")){
+      String[] args = query.split(": ");
+      String[] number = args[1].replace("?", "").split(", ");
+      int highestNumber = 0;
+      for(String stringNumber : number){
+        if(Integer.parseInt(stringNumber) > highestNumber){
+          highestNumber = Integer.parseInt(stringNumber);
+        }
+      }
+      return "" + highestNumber;
+    }
+
     return "";
   }
 }
