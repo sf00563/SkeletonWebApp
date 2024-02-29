@@ -16,6 +16,11 @@ public class QueryProcessor {
       return "Sam";
     }
 
+    if (query.toLowerCase().contains("plus")){
+      String[] args = query.split(" ");
+      return "" + (Integer.parseInt(args[2]) + Integer.parseInt(args[4].substring(0,args[4].length()-1)));
+    }
+
     return "";
   }
 }
