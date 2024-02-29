@@ -40,5 +40,10 @@ public class QueryProcessorTest {
     assertThat(queryProcessor.process("What is 11 multiplied by 20?"), containsString("220"));
   }
 
+  @Test
+  public void knowsSubtraction() throws Exception {
+    assertThat(queryProcessor.process("What is 33 minus 63?"), containsString("-30"));
+  }
+
 
 }
