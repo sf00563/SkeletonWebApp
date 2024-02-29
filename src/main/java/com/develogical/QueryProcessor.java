@@ -58,8 +58,34 @@ public class QueryProcessor {
       }
       return answer;
     }
+    if (query.toLowerCase().contains("primes")){
+      String[] args = query.split(": ");
+      String[] number = args[1].replace("?", "").split(", ");
+      String answer = "";
+      for(String stringNumber : number){
+        if(isPrime(Integer.parseInt(stringNumber))){
+          answer += Integer.parseInt(stringNumber) + ", ";
+        }
+      }
+      if(answer.charAt(answer.length()-1) == ','){
+        answer = answer.substring(0,answer.length()-1);
+      }
+      return answer;
+    }
+
 
 
     return "";
+  }
+
+  private boolean isPrime(int n){
+    if (n <= 1)
+      return false;
+
+    for (int i = 2; i < n; i++)
+      if (n % i == 0)
+        return false;
+
+    return true;
   }
 }
