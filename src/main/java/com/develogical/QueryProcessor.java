@@ -12,8 +12,8 @@ public class QueryProcessor {
           + "writer in the English language and the world's pre-eminent dramatist.";
     }
 
-    if (query.toLowerCase().contains("golf")){
-      return "golf is fun";
+    if (query.toLowerCase().contains("name")){
+      return "Sam";
     }
 
     return "";
